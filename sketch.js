@@ -27,7 +27,7 @@ function setup(){
 
 
     balls = Array.from({length: numBalls}, () => {
-        return new Ball(random(0, canvasWidth), random(0, canvasHeight), random(10,20))
+        return new Ball(random(0, canvasWidth), random(0, canvasHeight), random(30,60))
       })
 
 }
@@ -36,6 +36,7 @@ function draw(){
     background(30)
     
     balls.forEach(ball => {
+        ball.checkEdges()
         ball.move()
         ball.render()
     })
