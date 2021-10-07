@@ -7,7 +7,7 @@ class Spiderman{
         this.y = y
         this.w = w
         this.h = h
-
+        this.remainingEnergy = 5
     }
 
     animate(){

@@ -36,7 +36,7 @@ function setup(){
 
 function draw(){
     background(30)
-    
+    health.update(spidey.remainingEnergy)    
     health.render()
 
     balls.forEach(ball => {

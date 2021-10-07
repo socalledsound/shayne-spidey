@@ -15,4 +15,8 @@ class Health{
         fill([0,240,0])
         rect(this.x + this.w * 7, this.y - this.w/1.5, this.energy * this.w, this.h)
     }
+
+    update(spideyEnergy){
+        this.energy = spideyEnergy
+    }
 }
