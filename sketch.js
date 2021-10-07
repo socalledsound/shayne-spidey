@@ -45,8 +45,10 @@ function draw(){
         ball.render()
     })
     
+    spidey.checkCollisions(balls)
     spidey.animate()
-     spidey.render()
+    spidey.render()
+
 
 
     

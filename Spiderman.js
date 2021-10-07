@@ -14,6 +14,13 @@ class Spiderman{
         this.imageCounter++
     }
 
+    checkCollisions(balls){
+        balls.forEach(ball => {
+            // this would be a good place to compare 
+            // the spiderman's x and y to each ball's x and y
+        })
+    }
+
 
     render(){
       
