@@ -1,6 +1,12 @@
-# for shayne
+# with shayne
 
-moved some stuff around and rewrote it for you a bit to follow the mario pattern
+demo
+https://socalledsound.github.io/shayne-spidey/
 
-now you need to watch the vids from the last few days and fgure out the colliusions!\
-before tomorrow hah!
+point line intersection
+
+https://cscheng.info/2016/06/09/calculate-circle-line-intersection-with-javascript-and-p5js.html
+https://stackoverflow.com/questions/57891494/how-to-calculate-intersection-point-of-a-line-on-a-circle-using-p5-js
+
+drawing egg shapes with p5
+https://cscheng.info/2016/06/05/drawing-egg-shapes-with-p5js.html

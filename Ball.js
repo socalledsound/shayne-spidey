@@ -6,6 +6,8 @@ class Ball{
       this.color = [225, 0, 0]
       this.speedX = random(-10,10)
       this.speedY = random(-10,10)
+      this.collided = false
+      this.dead = false
     }
     
     checkEdges(){
@@ -27,9 +29,12 @@ class Ball{
     }
 
    render(){
-     console.log(this.x, this.y, this.size)
-     fill(this.color)
-     circle(this.x, this.y, this.size)
+    //  console.log(this.x, this.y, this.size)
+    if(!this.dead){
+        fill(this.color)
+        circle(this.x, this.y, this.size)
+    }
+
    } 
 
 

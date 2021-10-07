@@ -30,7 +30,7 @@ function setup(){
         return new Ball(random(0, canvasWidth), random(0, canvasHeight), random(30,60))
       })
 
-      health = new Health(canvasWidth - canvasWidth/3, 50, canvasWidth/40, canvasWidth/40)
+      health = new Health(canvasWidth/2, 50, canvasWidth/40, canvasWidth/40)
 
 }
 
@@ -40,16 +40,62 @@ function draw(){
     health.render()
 
     balls.forEach(ball => {
-        ball.checkEdges()
-        ball.move()
-        ball.render()
+        if(!ball.collided){
+            ball.checkEdges()
+            ball.move()
+            ball.render()
+        }
     })
-    
+
+   
+    let newBalls = balls.filter(ball => !ball.dead)
+    balls = newBalls
+
     spidey.checkCollisions(balls)
-    spidey.animate()
-    spidey.render()
+    if(spidey.remainingEnergy > 0){
+       
+        spidey.update()
+        spidey.render()
+    }else{
+        gameOver()
+    }
+ 
+}
+
+function gameOver(){
+    textSize(100)
+    fill(255)
+    text('GAME OVER', canvasWidth/3.5, canvasHeight/2)
+}
 
 
+function keyPressed(){
+    console.log(key)
 
-    
+    if(key === 'a'){
+        spidey.move({x:-10, y:0})
+    }
+    if(key === 'd'){
+        spidey.move({x:10, y:0})
+    }
+    if(key === 's'){
+        spidey.move({x:0, y:10})
+    }
+    if(key === 'w'){
+        spidey.move({x:0, y:-10})
+    }
+
+
+    if(key === 'i'){
+        spidey.slingWeb('up')
+    }
+    if(key === 'j'){
+        spidey.slingWeb('left')
+    }
+    if(key === 'k'){
+        spidey.slingWeb('right')
+    }
+    if(key === 'm'){
+        spidey.slingWeb('down')
+    }
 }
