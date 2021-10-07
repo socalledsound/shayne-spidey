@@ -30,11 +30,15 @@ function setup(){
         return new Ball(random(0, canvasWidth), random(0, canvasHeight), random(30,60))
       })
 
+      health = new Health(canvasWidth - canvasWidth/3, 50, canvasWidth/40, canvasWidth/40)
+
 }
 
 function draw(){
     background(30)
     
+    health.render()
+
     balls.forEach(ball => {
         ball.checkEdges()
         ball.move()
